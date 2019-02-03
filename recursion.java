@@ -6,6 +6,15 @@ public class recursion{
      *precondition: n is non-negative
 
     */
+
+    private static boolean check(double actual, double guess, double tolerance){
+      if (Math.abs(guess - actual) / actual * 100 <= tolerance){
+        return true;
+      }
+      return false;
+    }
+
+
     public static double sqrt(double n, double tolerance){
       return 0.0;
     }
