@@ -41,8 +41,19 @@ public class recursion{
         return 1;
       }
       else {
-        return fib(n - 2) + fib(n - 1);
+        return fibIteration(n);
       }
+    }
+
+    private static int fibIteration(int n){
+      int f1 = 1;
+      int f2 = 1;
+      for (int i = 2; i < n; i++){
+        int temp = f1 + f2;
+        f1 = f2;
+        f2 = temp;
+      }
+      return f2;
     }
 
     /*As Per classwork*/
@@ -52,10 +63,10 @@ public class recursion{
     // }
 
     public static void main (String args[]){
-      // for(int i = 0; i < 10; i++){
-      //   System.out.println(fib(i));
-      // }
-      System.out.println(sqrt(2.0, 0.001));
+       for(int i = 1; i < 10; i++){
+         System.out.println(fib(i));
+       }
+      //System.out.println(sqrt(2.0, 0.001));
     }
 
 }
