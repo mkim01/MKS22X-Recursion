@@ -7,16 +7,25 @@ public class recursion{
 
     */
 
-    private static boolean check(double actual, double guess, double tolerance){
-      if (Math.abs(guess - actual) / actual * 100 <= tolerance){
+    private static boolean check(double n, double guess, double tolerance){
+      double root = Math.sqrt(n);
+      if (Math.abs(guess - root) / root * 100 <= tolerance){
         return true;
       }
       return false;
     }
 
+    private static double approx(double n, double guess, double tolerance){
+      if (check(n, guess, tolerance)){
+        return guess;
+      }
+      else{
+        return approx(n, (n / guess + guess) / 2, tolerance);
+      }
+    }
 
     public static double sqrt(double n, double tolerance){
-      return 0.0;
+        return approx(n, 1, tolerance);
     }
 
     /*Recursively find the n'th fibbonaci number in linear time
@@ -42,11 +51,11 @@ public class recursion{
     //   return a;
     // }
 
-
     public static void main (String args[]){
-      for(int i = 0; i < 10; i++){
-        System.out.println(fib(i));
-      }
+      // for(int i = 0; i < 10; i++){
+      //   System.out.println(fib(i));
+      // }
+      System.out.println(sqrt(2.0, 0.001));
     }
 
 }
