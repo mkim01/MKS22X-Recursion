@@ -36,28 +36,36 @@ public class recursion{
      *precondition: n is non-negative
      */
      // 1 1 2 3 5 8 13 21 34
+
     public static int fib(int n){
-      if (n == 0){
-        return 1;
-      }
-      else if (n == 1){
-        return 1;
-      }
-      else {
-        return fibIteration(n);
-      }
+      return fibhelper(n, 0, 1);
     }
 
-    private static int fibIteration(int n){
-      int f1 = 1;
-      int f2 = 1;
-      for (int i = 2; i < n; i++){
+    public static int fibhelper(int n, int f1, int f2){
+      if (n == 0){
+        return f1;
+      }
+      else if (n == 1){
+        return f2;
+      }
+      else {
         int temp = f1 + f2;
         f1 = f2;
         f2 = temp;
+        return fibhelper(n - 1, f1, f2);
       }
-      return f2;
     }
+
+    // private static int fibIteration(int n){
+    //   int f1 = 1;
+    //   int f2 = 1;
+    //   for (int i = 2; i < n; i++){
+    //     int temp = f1 + f2;
+    //     f1 = f2;
+    //     f2 = temp;
+    //   }
+    //   return f2;
+    // }
 
     /*As Per classwork*/
      public static ArrayList<Integer> makeAllSums(int n){
