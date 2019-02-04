@@ -78,14 +78,18 @@ public class recursion{
 
 
     public static void main (String args[]){
-       // for(int i = 1; i < 10; i++){
-       //   System.out.println(fib(i));
-       // }
-       System.out.println(makeAllSums(3));
-       System.out.println(makeAllSums(2));
-       System.out.println(makeAllSums(0));
-       //gitSystem.out.println(makeAllSums(-1));
-      //System.out.println(sqrt(2.0, 0.001));
-    }
+      for(int i = 1; i < 10; i++){
+          System.out.println("fibbonaci number(" + i + "):");
+          System.out.println(fib(i));
+      }
+        System.out.println("sqare root of 2: " + Math.sqrt(2));
+         System.out.println("approximation with tolerance of 0.001%" + "" + ": "+ sqrt(2.0, 1));
+        System.out.println("sqare root of 3: " + Math.sqrt(3));
+         System.out.println("sqare root of 3 with tolerance of 0.001%" + "" + ": "+ sqrt(3.0, 1));
 
-}
+
+      for (int i = 0; i < 5; i++){
+          System.out.println("all possible sums from 1 to" + i + makeAllSums(i));
+      }
+    }
+  }
